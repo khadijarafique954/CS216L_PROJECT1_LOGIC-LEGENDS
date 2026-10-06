@@ -5,6 +5,7 @@ Student Record System
 KHADIJA RAFIQUE-45
 AYEHSA BASHIR-04
 KABSHA ASIM-23
+AYESHA KIRAN-63
 
 **Description:**
 This is a simple console-based Student Record System.

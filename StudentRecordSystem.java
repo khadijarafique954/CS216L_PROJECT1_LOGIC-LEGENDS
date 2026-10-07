@@ -1,7 +1,6 @@
 package lab1assignment;
 import java.util.Scanner;
 
-// Student Node for Linked List
 class Student {
     int rollNo;
     String name;
@@ -16,7 +15,6 @@ class Student {
     }
 }
 
-// Stack for Undo
 class UndoStack {
 
     String[] stack;
@@ -27,7 +25,6 @@ class UndoStack {
         top = -1;
     }
 
-    // Push operation
     void push(String action) {
         if (top == stack.length - 1) {
             System.out.println("Undo stack is full.");
@@ -37,7 +34,6 @@ class UndoStack {
         }
     }
 
-    // Pop operation
     String pop() {
         if (top == -1) {
             return null;
@@ -49,7 +45,6 @@ class UndoStack {
         return action;
     }
 
-    // Display stack
     void display() {
         if (top == -1) {
             System.out.println("Undo stack is empty.");
@@ -64,7 +59,6 @@ class UndoStack {
     }
 }
 
-// Main Student Record System
 public class StudentRecordSystem {
 
     Student head;
@@ -90,7 +84,6 @@ public class StudentRecordSystem {
         System.out.println("Student added successfully!");
     }
 
-    // Display Students
     void displayStudents() {
 
         if (head == null) {
@@ -114,7 +107,6 @@ public class StudentRecordSystem {
         }
     }
 
-    // Linear Search
     Student searchStudent(int rollNo) {
 
         Student current = head;
@@ -131,14 +123,12 @@ public class StudentRecordSystem {
         return null;
     }
 
-    // Delete Student
     Student deleteStudent(int rollNo) {
 
         if (head == null) {
             return null;
         }
 
-        // Delete first node
         if (head.rollNo == rollNo) {
 
             Student deleted = head;
@@ -166,8 +156,6 @@ public class StudentRecordSystem {
 
         return null;
     }
-
-    // Bubble Sort by GPA
     void sortByGPA() {
 
         if (head == null || head.next == null) {
@@ -187,17 +175,14 @@ public class StudentRecordSystem {
 
                 if (current.gpa > current.next.gpa) {
 
-                    // Swap Roll Number
                     int tempRoll = current.rollNo;
                     current.rollNo = current.next.rollNo;
                     current.next.rollNo = tempRoll;
 
-                    // Swap Name
                     String tempName = current.name;
                     current.name = current.next.name;
                     current.next.name = tempName;
 
-                    // Swap GPA
                     double tempGPA = current.gpa;
                     current.gpa = current.next.gpa;
                     current.next.gpa = tempGPA;
@@ -213,7 +198,6 @@ public class StudentRecordSystem {
         System.out.println("Students sorted by GPA!");
     }
 
-    // Update GPA
     boolean updateGPA(int rollNo, double newGPA) {
 
         Student student = searchStudent(rollNo);
@@ -227,7 +211,6 @@ public class StudentRecordSystem {
         return false;
     }
 
-    // Main Method
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
